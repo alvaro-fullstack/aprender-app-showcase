@@ -16,11 +16,11 @@ Este repositorio funciona como un **Monorepo de Showcases**. Para mantener prote
 
 ---
 
-### 2. 🔍 Detector de Plagio & Calibrador de IA
-> Herramienta especializada de NLP capaz de procesar textos complejos y analizar su porcentaje de autoría de inteligencia artificial con precisión calibrada frente a estándares de mercado (como Turnitin).
-*   **Tecnologías:** `Python` | `NLP` | `Regular Expressions` | `Data Science`
-*   **Características destacadas:** Lógica de segmentación de bloques no continuos para evitar falsos positivos en secciones introductorias académicas y coincidencia exacta frente a Ground Truth definidos.
-*   👉 *(Detalles del proyecto próximamente disponibles)*
+### 2. 🔍 LikeTurnitin
+> Herramienta avanzada de NLP diseñada para analizar textos académicos en español y calibrar su nivel de detección de IA con precisión milimétrica, simulando estándares comerciales del mercado (Turnitin) con una paridad del 41%.
+*   **Tecnologías:** `Python` | `NLP` | `Regex Engines` | `Data Science` | `JSON Validation`
+*   **Características destacadas:** Algoritmo de consolidación de párrafos contiguos, filtrado inteligente de plantillas universitarias y cabeceras para evitar falsos positivos, y motor de validación cruzada con ground truth.
+*   👉 **[Ver Detalles e Ingeniería de LikeTurnitin](./liketurnitin/README.md)**
 
 ---
 
@@ -36,8 +36,8 @@ Este repositorio funciona como un **Monorepo de Showcases**. Para mantener prote
 
 *   **Frontend Avanzado:** React (v18 & v19), Vite, SPA Optimization, CSS3 (animaciones y Grid/Flexbox blindados contra desbordamientos).
 *   **Desarrollo Híbrido Mobile:** Capacitor (Android & iOS Bridge), Plugins nativos, Background tasks, y empaquetado de APKs de producción optimizadas.
-*   **Backend & Python:** FastAPI, REST APIs, Web Scraping asíncrono (BeautifulSoup, DuckDuckGo Integration), PyPDF2 y procesamiento de textos a gran escala.
-*   **Nube & Seguridad:** Autenticación OAuth 2.0 nativa, integración segura con APIs externas de Google Cloud Platform y optimización de base de datos distribuidas locales (LocalStorage, IndexedDB) con sincronización.
+*   **Backend, Python & NLP:** FastAPI, REST APIs, Web Scraping asíncrono, análisis sintáctico y estadístico de textos, NLP heuristics (perplejidad y burstiness), PyPDF2.
+*   **Nube & DevOps:** Integración segura con APIs externas (Google Drive API), Git Workflow avanzado (Monorepos, private/public showcase management), automatizaciones locales.
 
 ---
 
