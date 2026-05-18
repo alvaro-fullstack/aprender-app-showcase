@@ -1,79 +1,49 @@
-# 🎓 Aprender App — Simulador de Tests & Temarios Premium para Oposiciones
+# 🚀 Portafolio de Proyectos & Showcases Técnicos — Álvaro
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Capacitor](https://img.shields.io/badge/Capacitor-8-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Google Drive Cloud](https://img.shields.io/badge/Google_Drive-Sync-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://developers.google.com/drive)
+¡Bienvenido a mi espacio de presentación de ingeniería de software! Aquí organizo y detallo las aplicaciones y desarrollos más destacados de mi trayectoria técnica. 
 
-**Aprender App** es una plataforma educativa de alto rendimiento diseñada para la preparación avanzada de oposiciones y exámenes técnicos. Disponible tanto en versión **Web** como **Mobile (Android Nativo)** a través de una integración híbrida con **Capacitor 8**.
-
-> 🔒 **Nota sobre el código fuente:** Este es un repositorio público de presentación (*Showcase*). El código fuente original, los scripts de extracción y las bases de datos de preguntas se encuentran en un **repositorio privado** para proteger los derechos de propiedad intelectual y los activos comerciales del proyecto. Si eres un reclutador y deseas realizar una revisión técnica de la arquitectura de código, por favor contáctame para programar una demo técnica por pantalla compartida.
+Este repositorio funciona como un **Monorepo de Showcases**. Para mantener protegidos los derechos de propiedad intelectual, la base de código original de cada proyecto reside en un **repositorio privado**. En cada sección encontrarás una documentación técnica detallada, diagramas de arquitectura y especificaciones del stack utilizado.
 
 ---
 
-## 📱 Demostración Visual & Características Premium
+## 📂 Índice de Proyectos Destacados
 
-### 1. 🎙️ Modo Podcast & Audio IA (TTS Secuencial)
-*   **Funcionalidad:** Un sistema automatizado de manos libres que lee secuencialmente cada pregunta y su respuesta correcta en orden, permitiendo al opositor estudiar mientras realiza otras tareas (caminar, cocinar, viajar).
-*   **Ingeniería:** Desarrollado utilizando el plugin nativo `@capacitor-community/text-to-speech` para garantizar el funcionamiento en segundo plano (incluso con la pantalla bloqueada).
-*   **Ajustes de Voz:** Configurado con una velocidad optimizada de **x1.3 / x1.5** y modulación de frecuencia (*pitch*) a 1.0 para ofrecer una voz masculina ("Álvaro IA") cristalina, fluida y sin distorsión.
-
-### 2. 📖 Modo Estudio (Ver Todas)
-*   **Funcionalidad:** Permite alternar instantáneamente la interfaz del simulador a un modo de "lectura rápida" en el que todas las preguntas del examen aparecen resueltas y con la opción correcta resaltada en tiempo real.
-*   **Responsividad:** Diseño responsivo blindado contra desbordamientos (*overflows*) laterales y adaptabilidad de zoom inteligente tanto en orientación vertical como horizontal.
-
-### 3. 🎯 Corrección Dinámica por Tramos (1/3 y 2/3)
-*   **Funcionalidad:** En lugar de esperar al final del examen (que puede constar de más de 100 preguntas), el opositor puede validar su progreso en puntos de control estratégicos (al completar un tercio o dos tercios del test).
-*   **Persistencia:** Los fallos cometidos en cada tramo se guardan inmediatamente en un historial persistente de `LocalStorage` para poder reintentar únicamente los errores más adelante.
-
-### 4. ☁️ Sincronización en la Nube con Google Drive (Base de Datos a Coste Cero)
-*   **Funcionalidad:** Copia de seguridad automática de todo el progreso del usuario, estadísticas, y tests fallidos en la nube de Google Drive.
-*   **Seguridad:** Implementación de Google OAuth 2.0 y Capacitor Google Auth nativo. Los datos del usuario se almacenan de forma segura y privada dentro del directorio aislado `appDataFolder` de la cuenta de Drive del propio usuario, garantizando privacidad absoluta y un coste de infraestructura de servidor de 0€ para el creador de la app.
+### 1. 🎓 Aprender App
+> Plataforma educativa premium para preparación de oposiciones. Cuenta con simulador de tests interactivos, temarios autogenerados por Inteligencia Artificial y sincronización nativa en la nube.
+*   **Tecnologías:** `React 19` | `Capacitor 8` | `FastAPI (Python)` | `Google Drive API` | `TTS Android Engine`
+*   **Características destacadas:** Modo Podcast (Text-To-Speech secuencial en background), corrección selectiva por tramos con persistencia, sincronización a coste cero en Google Drive AppData y web scraping inteligente de PDFs oficiales de internet.
+*   👉 **[Ver Detalles e Ingeniería de Aprender App](./aprender-app/README.md)**
 
 ---
 
-## 🛠️ Arquitectura Técnica & Stack Tecnológico
-
-El proyecto está estructurado con una arquitectura modular y limpia, diseñada para ser mantenible y escalable:
-
-```mermaid
-graph TD
-    A[Aprender App - React Frontend] -->|Capacitor 8 Bridge| B[Capacitor Native Plugins]
-    B -->|Audio Nativo| C[TTS Native Engine - Android]
-    B -->|Seguridad| D[Google Auth Native SDK]
-    A -->|OAuth 2.0 / REST| E[Google Drive AppData API]
-    A -->|REST API| F[FastAPI Backend - Python]
-    F -->|Scraping Dinámico| G[DuckDuckGo Search & BeautifulSoup]
-    F -->|Procesamiento IA| H[OpenAI GPT-4o-mini & Fallbacks]
-```
-
-### 💻 Frontend (React + Híbrido)
-*   **React 19 & React Router 7:** SPA rápida con navegación virtual optimizada para dispositivos móviles.
-*   **Vite 8 & Rolldown:** Compilador ultra rápido y optimización de chunks para un empaquetado de producción óptimo de cara al APK final.
-*   **Vanilla CSS Premium:** Sistema de diseño responsivo basado en variables dinámicas, animaciones fluidas (`@keyframes`) y soporte nativo para visualización horizontal en dispositivos móviles.
-
-### 🔌 Integración Nativa (Capacitor 8)
-*   **Text-to-Speech Nativo:** Bypassea las restricciones de ahorro de datos de los navegadores móviles mediante el motor nativo de TTS de Android.
-*   **Google Auth:** Inicio de sesión único nativo mediante credenciales seguras del sistema operativo.
-
-### 🐍 Backend & Inteligencia Artificial (FastAPI + Python)
-*   **Generador Inteligente de Temarios:** Un sistema que realiza búsquedas web automáticas y scraping de PDFs técnicos reales de internet mediante `BeautifulSoup` y la API de DuckDuckGo.
-*   **Procesamiento de Lenguaje Natural (NLP):** Los textos scrapeados son estructurados en temarios interactivos de 5 niveles de dificultad utilizando modelos avanzados de IA en formato JSON estricto.
+### 2. 🔍 Detector de Plagio & Calibrador de IA
+> Herramienta especializada de NLP capaz de procesar textos complejos y analizar su porcentaje de autoría de inteligencia artificial con precisión calibrada frente a estándares de mercado (como Turnitin).
+*   **Tecnologías:** `Python` | `NLP` | `Regular Expressions` | `Data Science`
+*   **Características destacadas:** Lógica de segmentación de bloques no continuos para evitar falsos positivos en secciones introductorias académicas y coincidencia exacta frente a Ground Truth definidos.
+*   👉 *(Detalles del proyecto próximamente disponibles)*
 
 ---
 
-## 📈 Metodologías de Desarrollo Aplicadas
-
-1.  **Optimización del Rendimiento Móvil:** Compilación a producción optimizada con minificación agresiva. Carga bajo demanda de módulos para asegurar un tiempo de respuesta de pantalla inmediato en cualquier terminal Android.
-2.  **Seguridad de Credenciales:** Gestión estricta de variables de entorno mediante `.env` (excluidos de Git de forma nativa), impidiendo la exposición de APIs y Client IDs de Google.
-3.  **Clean Code & SOLID:** Separación limpia de responsabilidades (Servicios para llamadas API, Hooks personalizados para lógica de estado persistente, y Componentes puros para interfaz de usuario).
+### 3. 🤖 DevOps Automation Pipeline & Ansible System
+> Sistema completo de automatización de despliegue continuo para servicios distribuidos escalables.
+*   **Tecnologías:** `FastAPI` | `Docker` | `Ansible` | `Jenkins CI/CD` | `PostgreSQL`
+*   **Características destacadas:** Automatización de orquestación de contenedores, ejecución asíncrona de playbooks de Ansible y persistencia segura de estados de infraestructura.
+*   👉 *(Detalles del proyecto próximamente disponibles)*
 
 ---
 
-## 📬 Contacto & Enlaces de Interés
+## 🛠️ Habilidades Globales & Stack de Ingeniería
 
-Si te interesa conocer más sobre este proyecto, ver el código fuente privado en una sesión guiada o discutir oportunidades de colaboración:
+*   **Frontend Avanzado:** React (v18 & v19), Vite, SPA Optimization, CSS3 (animaciones y Grid/Flexbox blindados contra desbordamientos).
+*   **Desarrollo Híbrido Mobile:** Capacitor (Android & iOS Bridge), Plugins nativos, Background tasks, y empaquetado de APKs de producción optimizadas.
+*   **Backend & Python:** FastAPI, REST APIs, Web Scraping asíncrono (BeautifulSoup, DuckDuckGo Integration), PyPDF2 y procesamiento de textos a gran escala.
+*   **Nube & Seguridad:** Autenticación OAuth 2.0 nativa, integración segura con APIs externas de Google Cloud Platform y optimización de base de datos distribuidas locales (LocalStorage, IndexedDB) con sincronización.
+
+---
+
+## 📬 Contacto & Videollamada Técnica
+
+Si eres reclutador, lead developer o director de tecnología y quieres ver el código fuente privado de cualquiera de estos proyectos en una sesión guiada por pantalla compartida:
 
 *   **GitHub:** [@alvaro-fullstack](https://github.com/alvaro-fullstack)
 *   **LinkedIn:** [Alvaro Fullstack](https://www.linkedin.com/) *(Introduce aquí tu enlace)*
-*   **Live Web Demo:** *Próximamente disponible*
