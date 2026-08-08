@@ -1,5 +1,61 @@
-# Git ignore
-node_modules/
+# Gitignore de Seguridad para Repositorios Showcase / Públicos
+
+# Secretos y Variables de Entorno
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+token.json
+client_secret*.json
+
+# Archivos de Sistema y Entorno de Desarrollo
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node.js & Javascript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+.next/
+.out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+env/
+
+# Android & Gradle
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+
+# Bases de Datos Local & Logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Archivos Comprimidos
 *.zip
+*.tar.gz
 *.rar
+*.7z
